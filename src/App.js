@@ -15,7 +15,8 @@ function AppContent() {
   const [forecast, setForecast] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [city, setCity] = useState('Athens');
+  const [city, setCity] = useState(null);
+  const [showSearch, setShowSearch] = useState(true);
 
   useEffect(() => {
     if (city) {
@@ -27,6 +28,7 @@ function AppContent() {
     try {
       setLoading(true);
       setError(null);
+      setShowSearch(false);
       const [weatherData, forecastData] = await Promise.all([
         fetchCurrentWeather(cityName),
         fetchForecast(cityName)
@@ -35,6 +37,7 @@ function AppContent() {
       setForecast(forecastData);
     } catch (err) {
       setError(err.message);
+      setShowSearch(true);
     } finally {
       setLoading(false);
     }
@@ -56,6 +59,43 @@ function AppContent() {
       );
     }
   };
+
+  if (showSearch) {
+    return (
+      <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
+        <div className="search-screen-container">
+          <div className="search-screen-content fade-in">
+            <h1 className="app-title">Weather App</h1>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              const input = e.target.elements.city;
+              if (input.value.trim()) {
+                handleSearch(input.value.trim());
+              }
+            }} className="search-form">
+              <input
+                type="text"
+                name="city"
+                placeholder="Enter city name..."
+                className="search-screen-input"
+              />
+              <button type="submit" className="search-screen-button">
+                Search
+              </button>
+              <button
+                type="button"
+                onClick={handleLocationClick}
+                className="location-screen-button"
+                title="Use my location"
+              >
+                📍
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
