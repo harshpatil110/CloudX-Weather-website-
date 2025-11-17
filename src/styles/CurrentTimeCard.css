@@ -1,0 +1,57 @@
+.current-time-card {
+  padding: 40px;
+  text-align: center;
+  animation-delay: 0.1s;
+}
+
+.city-name {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.light-mode .city-name {
+  color: #000000;
+}
+
+.dark-mode .city-name {
+  color: #FFFFFF;
+}
+
+.time-display {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.light-mode .time-display {
+  color: #000000;
+}
+
+.dark-mode .time-display {
+  color: #FFFFFF;
+}
+
+.date-display {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .current-time-card {
+    padding: 30px;
+  }
+
+  .city-name {
+    font-size: 24px;
+  }
+
+  .time-display {
+    font-size: 56px;
+  }
+
+  .date-display {
+    font-size: 14px;
+  }
+}

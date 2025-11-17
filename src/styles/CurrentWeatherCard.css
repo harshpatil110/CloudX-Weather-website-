@@ -1,0 +1,169 @@
+.current-weather-card {
+  padding: 40px;
+  animation-delay: 0.2s;
+}
+
+.weather-main {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.weather-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.temperature {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.light-mode .temperature {
+  color: #000000;
+}
+
+.dark-mode .temperature {
+  color: #FFFFFF;
+}
+
+.feels-like {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.sun-times {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.sun-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sun-icon {
+  font-size: 24px;
+}
+
+.sun-label {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.sun-time {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.weather-center {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.weather-icon-large {
+  font-size: 120px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 10px 30px rgba(30, 144, 255, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.weather-condition {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.light-mode .weather-condition {
+  color: #000000;
+}
+
+.dark-mode .weather-condition {
+  color: #FFFFFF;
+}
+
+.weather-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.weather-stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-icon {
+  font-size: 28px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.light-mode .stat-value {
+  color: #000000;
+}
+
+.dark-mode .stat-value {
+  color: #FFFFFF;
+}
+
+.stat-label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+  .weather-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .weather-left {
+    align-items: center;
+  }
+
+  .weather-right {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .current-weather-card {
+    padding: 25px;
+  }
+
+  .temperature {
+    font-size: 48px;
+  }
+
+  .weather-icon-large {
+    font-size: 80px;
+  }
+
+  .weather-condition {
+    font-size: 22px;
+  }
+
+  .weather-right {
+    grid-template-columns: 1fr 1fr;
+  }
+}

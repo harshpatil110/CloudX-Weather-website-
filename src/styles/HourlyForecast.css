@@ -1,80 +1,134 @@
 .hourly-forecast {
-  padding: 25px;
-  border-radius: 25px;
-  margin: 20px 0;
-  animation-delay: 0.3s;
+  padding: 30px;
+  animation-delay: 0.4s;
 }
 
-.section-title {
+.hourly-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.light-mode .hourly-title {
+  color: #000000;
+}
+
+.dark-mode .hourly-title {
+  color: #FFFFFF;
+}
+
+.hourly-scroll {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  color: rgba(255, 255, 255, 0.9);
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }
 
-.title-icon {
-  font-size: 22px;
+.hourly-scroll::-webkit-scrollbar {
+  height: 8px;
 }
 
-.hourly-chart {
-  position: relative;
+.hourly-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
 }
 
-.temp-curve {
-  width: 100%;
-  height: 120px;
-  margin-bottom: 20px;
-}
-
-.hourly-items {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+.hourly-scroll::-webkit-scrollbar-thumb {
+  background: rgba(30, 144, 255, 0.5);
+  border-radius: 10px;
 }
 
 .hourly-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-  padding: 10px;
-  border-radius: 15px;
+  min-width: 120px;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.hourly-item:hover {
-  background: rgba(30, 144, 255, 0.1);
-  transform: translateY(-5px);
+.light-mode .hourly-item {
+  background: linear-gradient(135deg, rgba(255, 200, 100, 0.3), rgba(255, 150, 50, 0.3));
+  border: 1px solid rgba(255, 200, 100, 0.4);
 }
 
-.hour-temp {
-  font-size: 18px;
+.dark-mode .hourly-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hourly-item:hover {
+  transform: translateY(-8px);
+}
+
+.light-mode .hourly-item:hover {
+  background: linear-gradient(135deg, rgba(255, 200, 100, 0.5), rgba(255, 150, 50, 0.5));
+  box-shadow: 0 10px 30px rgba(255, 150, 50, 0.3);
+}
+
+.dark-mode .hourly-item:hover {
+  background: rgba(30, 144, 255, 0.2);
+  border-color: #1E90FF;
+}
+
+.hourly-time {
+  font-size: 16px;
   font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.light-mode .hourly-time {
+  color: #000000;
+}
+
+.dark-mode .hourly-time {
+  color: #FFFFFF;
+}
+
+.hourly-icon {
+  font-size: 48px;
+  margin: 15px 0;
+}
+
+.hourly-temp {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.light-mode .hourly-temp {
+  color: #000000;
+}
+
+.dark-mode .hourly-temp {
+  color: #FFFFFF;
+}
+
+.hourly-wind {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.wind-icon {
+  font-size: 16px;
   color: #1E90FF;
 }
 
-.hour-icon {
-  font-size: 32px;
-  filter: drop-shadow(0 2px 8px rgba(30, 144, 255, 0.3));
-}
-
-.hour-time {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
-}
-
 @media (max-width: 768px) {
-  .hourly-items {
-    overflow-x: auto;
-    padding-bottom: 10px;
+  .hourly-forecast {
+    padding: 20px;
   }
 
   .hourly-item {
-    min-width: 80px;
+    min-width: 100px;
+    padding: 15px;
+  }
+
+  .hourly-icon {
+    font-size: 40px;
   }
 }
