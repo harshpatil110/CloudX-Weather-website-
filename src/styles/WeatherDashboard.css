@@ -6,11 +6,10 @@
 
 .dashboard-content {
   flex: 1;
-  margin-left: 80px;
   padding: 20px 40px;
   padding-bottom: 100px;
   max-width: 1400px;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .tab-content {
@@ -148,9 +147,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .dashboard-content {
-    margin-left: 0;
     padding: 15px;
-    padding-bottom: 90px;
+    padding-bottom: 40px;
   }
 
   .skeleton-cards {

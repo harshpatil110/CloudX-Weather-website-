@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from './Sidebar';
 import WeatherHeader from './WeatherHeader';
 import HourlyForecast from './HourlyForecast';
 import WeeklyForecast from './WeeklyForecast';
@@ -10,7 +9,6 @@ import { fetchCurrentWeather, fetchForecast } from '../utils/weatherApi';
 import '../styles/WeatherDashboard.css';
 
 const WeatherDashboard = () => {
-  const [activeTab, setActiveTab] = useState('weather');
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -67,7 +65,6 @@ const WeatherDashboard = () => {
   if (loading) {
     return (
       <div className="dashboard-container">
-        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className="dashboard-content">
           <div className="loading-skeleton">
             <div className="skeleton-header"></div>
@@ -85,7 +82,6 @@ const WeatherDashboard = () => {
   if (error) {
     return (
       <div className="dashboard-container">
-        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className="dashboard-content">
           <div className="error-message glass">
             <span className="error-icon">⚠️</span>
@@ -100,49 +96,14 @@ const WeatherDashboard = () => {
     );
   }
 
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'weather':
-        return (
-          <>
-            <WeatherHeader weather={weather} onCityChange={handleCityChange} />
-            <WeeklyForecast forecast={forecast} />
-            <HourlyForecast forecast={forecast} />
-            <AirConditionsPanel weather={weather} />
-          </>
-        );
-      case 'cities':
-        return (
-          <div className="tab-content glass fade-in">
-            <h2>Saved Cities</h2>
-            <p>Your saved cities will appear here</p>
-          </div>
-        );
-      case 'settings':
-        return (
-          <div className="tab-content glass fade-in">
-            <h2>Settings</h2>
-            <button onClick={handleBackToSearch} className="back-button">
-              Change City
-            </button>
-          </div>
-        );
-      default:
-        return (
-          <div className="tab-content glass fade-in">
-            <h2>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</h2>
-            <p>Content for {activeTab} coming soon</p>
-          </div>
-        );
-    }
-  };
-
   return (
     <div className="dashboard-container">
       <BackgroundController weather={weather} />
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="dashboard-content">
-        {renderContent()}
+        <WeatherHeader weather={weather} onCityChange={handleCityChange} />
+        <WeeklyForecast forecast={forecast} />
+        <HourlyForecast forecast={forecast} />
+        <AirConditionsPanel weather={weather} />
       </div>
     </div>
   );
