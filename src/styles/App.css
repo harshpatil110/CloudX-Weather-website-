@@ -1,0 +1,64 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: background 0.5s ease;
+}
+
+.app-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Weather-based background gradient classes */
+.bg-clear {
+  background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+}
+
+.bg-rain {
+  background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+}
+
+.bg-clouds {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
+}
+
+.bg-snow {
+  background: linear-gradient(135deg, #0c1445 0%, #3a5a7f 100%);
+}
+
+.bg-thunderstorm {
+  background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+}
+
+.bg-default {
+  background: #000000;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 16px;
+  }
+
+  .app-content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 12px;
+  }
+
+  .app-content {
+    gap: 16px;
+  }
+}
