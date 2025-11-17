@@ -1,0 +1,61 @@
+.weekly-forecast {
+  padding: 20px 0;
+  animation-delay: 0.4s;
+}
+
+.weekly-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.weekly-card {
+  min-width: 120px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.weekly-card:hover {
+  transform: translateY(-8px);
+  background: rgba(30, 144, 255, 0.15);
+  border-color: #1E90FF;
+}
+
+.day-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
+}
+
+.day-icon {
+  font-size: 48px;
+  filter: drop-shadow(0 4px 12px rgba(30, 144, 255, 0.3));
+}
+
+.day-temps {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+}
+
+.temp-high {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.temp-divider {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.temp-low {
+  color: rgba(255, 255, 255, 0.6);
+}
