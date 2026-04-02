@@ -1,13 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Modern Weather Dashboard" />
-    <title>Weather Dashboard</title>
+    <meta name="description" content="METEO | Editorial Weather Dashboard" />
+    <title>METEO | Editorial Weather Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#31332c",
+              "inverse-surface": "#0e0e0c",
+              "error": "#9e422c",
+              "surface-tint": "#625d5b",
+              "on-secondary-fixed": "#443e3a",
+              "surface-container-low": "#f5f4ed",
+              "surface-dim": "#d9dbcf",
+              "surface-variant": "#e2e3d9",
+              "tertiary": "#5f5f5e",
+              "on-primary-container": "#55514e",
+              "secondary-fixed-dim": "#dcd3cd",
+              "error-dim": "#5c1202",
+              "primary-dim": "#56514f",
+              "tertiary-container": "#f5f3f2",
+              "on-tertiary-container": "#5c5c5b",
+              "tertiary-dim": "#535352",
+              "surface-container-highest": "#e2e3d9",
+              "background": "#fbf9f4",
+              "secondary-dim": "#58524d",
+              "surface-bright": "#fbf9f4",
+              "on-error-container": "#742410",
+              "surface-container": "#efeee6",
+              "on-secondary-container": "#57514c",
+              "on-background": "#31332c",
+              "inverse-on-surface": "#9e9d99",
+              "secondary": "#645e59",
+              "primary-fixed-dim": "#dad3cf",
+              "outline-variant": "#b1b3a9",
+              "on-surface-variant": "#5e6058",
+              "primary": "#625d5b",
+              "error-container": "#fe8b70",
+              "on-primary-fixed-variant": "#5f5b58",
+              "inverse-primary": "#ffffff",
+              "surface": "#fbf9f4",
+              "secondary-fixed": "#eae1da",
+              "on-secondary-fixed-variant": "#615a56",
+              "on-secondary": "#fff7f4",
+              "on-error": "#fff7f6",
+              "outline": "#797c73",
+              "on-tertiary": "#fbf8f7",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#e7e5e4",
+              "on-primary": "#fef6f2",
+              "primary-fixed": "#e9e1dd",
+              "tertiary-fixed": "#f5f3f2",
+              "primary-container": "#e9e1dd",
+              "on-tertiary-fixed-variant": "#666665",
+              "on-primary-fixed": "#433e3c",
+              "on-tertiary-fixed": "#494a49",
+              "secondary-container": "#eae1da",
+              "surface-container-high": "#e8e9e0"
+            },
+            fontFamily: {
+              "headline": ["Epilogue", "sans-serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
   </head>
-  <body>
+  <body class="bg-background text-on-surface selection:bg-surface-variant">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
