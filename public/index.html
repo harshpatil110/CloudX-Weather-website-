@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="METEO | Editorial Weather Dashboard" />
-    <title>METEO | Editorial Weather Dashboard</title>
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     
-    <script id="tailwind-config">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>METEO | Editorial Weather Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "on-surface": "#31332c",
+              "on-surface": "#1c1917", // stone-900 equivalent
               "inverse-surface": "#0e0e0c",
               "error": "#9e422c",
               "surface-tint": "#625d5b",
@@ -25,13 +22,13 @@
               "surface-container-low": "#f5f4ed",
               "surface-dim": "#d9dbcf",
               "surface-variant": "#e2e3d9",
-              "tertiary": "#5f5f5e",
-              "on-primary-container": "#55514e",
+              "tertiary": "#44403c", // darker stone
+              "on-primary-container": "#44403c",
               "secondary-fixed-dim": "#dcd3cd",
               "error-dim": "#5c1202",
               "primary-dim": "#56514f",
               "tertiary-container": "#f5f3f2",
-              "on-tertiary-container": "#5c5c5b",
+              "on-tertiary-container": "#44403c",
               "tertiary-dim": "#535352",
               "surface-container-highest": "#e2e3d9",
               "background": "#fbf9f4",
@@ -39,20 +36,20 @@
               "surface-bright": "#fbf9f4",
               "on-error-container": "#742410",
               "surface-container": "#efeee6",
-              "on-secondary-container": "#57514c",
-              "on-background": "#31332c",
+              "on-secondary-container": "#44403c",
+              "on-background": "#1c1917",
               "inverse-on-surface": "#9e9d99",
-              "secondary": "#645e59",
+              "secondary": "#44403c",
               "primary-fixed-dim": "#dad3cf",
               "outline-variant": "#b1b3a9",
-              "on-surface-variant": "#5e6058",
-              "primary": "#625d5b",
+              "on-surface-variant": "#44403c",
+              "primary": "#1c1917",
               "error-container": "#fe8b70",
-              "on-primary-fixed-variant": "#5f5b58",
+              "on-primary-fixed-variant": "#44403c",
               "inverse-primary": "#ffffff",
               "surface": "#fbf9f4",
               "secondary-fixed": "#eae1da",
-              "on-secondary-fixed-variant": "#615a56",
+              "on-secondary-fixed-variant": "#44403c",
               "on-secondary": "#fff7f4",
               "on-error": "#fff7f6",
               "outline": "#797c73",
@@ -63,9 +60,9 @@
               "primary-fixed": "#e9e1dd",
               "tertiary-fixed": "#f5f3f2",
               "primary-container": "#e9e1dd",
-              "on-tertiary-fixed-variant": "#666665",
-              "on-primary-fixed": "#433e3c",
-              "on-tertiary-fixed": "#494a49",
+              "on-tertiary-fixed-variant": "#44403c",
+              "on-primary-fixed": "#1c1917",
+              "on-tertiary-fixed": "#1c1917",
               "secondary-container": "#eae1da",
               "surface-container-high": "#e8e9e0"
             },
@@ -79,8 +76,16 @@
         },
       }
     </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .text-editorial-lg { font-family: 'Epilogue'; font-weight: 900; letter-spacing: -0.04em; }
+    </style>
+
   </head>
-  <body class="bg-background text-on-surface selection:bg-surface-variant">
+  <body class="bg-background text-stone-900 selection:bg-stone-200">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
