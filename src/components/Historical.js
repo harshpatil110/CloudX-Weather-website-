@@ -11,19 +11,19 @@ export default function Historical() {
 <p className="font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500">METEOROLOGICAL DATA</p>
 </div>
 <nav className="flex flex-col gap-y-6 flex-grow">
-<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200" href="#">
+<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200" href="#forecast">
 <span className="material-symbols-outlined" data-icon="cloud_sync">cloud_sync</span>
                 FORECAST
             </a>
-<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200" href="#">
+<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200" href="#radar">
 <span className="material-symbols-outlined" data-icon="radar">radar</span>
                 RADAR
             </a>
-<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200" href="#">
+<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200" href="#aqi">
 <span className="material-symbols-outlined" data-icon="air">air</span>
                 AIR QUALITY
             </a>
-<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-bold uppercase text-stone-900 dark:text-stone-100 border-r-2 border-stone-900 dark:border-stone-100" href="#">
+<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-bold uppercase text-stone-900 dark:text-stone-100 border-r-2 border-stone-900 dark:border-stone-100" href="#historical">
 <span className="material-symbols-outlined" data-icon="history" style={{}}>history</span>
                 HISTORICAL
             </a>

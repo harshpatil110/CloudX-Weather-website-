@@ -11,20 +11,20 @@ export default function Radar() {
 <p className="font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500">METEOROLOGICAL DATA</p>
 </div>
 <nav className="flex-1 space-y-2">
-<a className="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-500 dark:text-stone-400 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase hover:text-stone-900 dark:hover:text-stone-100" href="#">
+<a className="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-500 dark:text-stone-400 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase hover:text-stone-900 dark:hover:text-stone-100" href="#forecast">
 <span className="material-symbols-outlined" data-icon="cloud_sync">cloud_sync</span>
 <span>FORECAST</span>
 </a>
 
-<a className="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-900 dark:text-stone-100 font-bold border-r-2 border-stone-900 dark:border-stone-100 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase" href="#">
+<a className="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-900 dark:text-stone-100 font-bold border-r-2 border-stone-900 dark:border-stone-100 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase" href="#radar">
 <span className="material-symbols-outlined" data-icon="radar">radar</span>
 <span>RADAR</span>
 </a>
-<a className="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-500 dark:text-stone-400 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase hover:text-stone-900 dark:hover:text-stone-100" href="#">
+<a className="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-500 dark:text-stone-400 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase hover:text-stone-900 dark:hover:text-stone-100" href="#radar">
 <span className="material-symbols-outlined" data-icon="air">air</span>
 <span>AIR QUALITY</span>
 </a>
-<a className="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-500 dark:text-stone-400 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase hover:text-stone-900 dark:hover:text-stone-100" href="#">
+<a className="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-500 dark:text-stone-400 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase hover:text-stone-900 dark:hover:text-stone-100" href="#historical">
 <span className="material-symbols-outlined" data-icon="history">history</span>
 <span>HISTORICAL</span>
 </a>

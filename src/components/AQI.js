@@ -11,20 +11,20 @@ export default function AQI() {
 <div className="font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 mt-1">METEOROLOGICAL DATA</div>
 </div>
 <nav className="flex flex-col gap-y-6 flex-grow">
-<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 transition-colors duration-200" href="#">
+<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 transition-colors duration-200" href="#forecast">
 <span className="material-symbols-outlined" data-icon="cloud_sync">cloud_sync</span>
                 FORECAST
             </a>
-<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 transition-colors duration-200" href="#">
+<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 transition-colors duration-200" href="#radar">
 <span className="material-symbols-outlined" data-icon="radar">radar</span>
                 RADAR
             </a>
 
-<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-900 dark:text-stone-100 font-bold border-r-2 border-stone-900 dark:border-stone-100" href="#">
+<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-900 dark:text-stone-100 font-bold border-r-2 border-stone-900 dark:border-stone-100" href="#aqi">
 <span className="material-symbols-outlined" data-icon="air">air</span>
                 AIR QUALITY
             </a>
-<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 transition-colors duration-200" href="#">
+<a className="flex items-center gap-3 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500 hover:text-stone-900 transition-colors duration-200" href="#aqi">
 <span className="material-symbols-outlined" data-icon="history">history</span>
                 HISTORICAL
             </a>

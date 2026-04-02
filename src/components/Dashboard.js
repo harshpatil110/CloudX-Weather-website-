@@ -11,19 +11,19 @@ export default function Dashboard() {
 <p className="text-[10px] font-bold tracking-widest uppercase text-stone-700 mt-1">EDITORIAL EDITION</p>
 </div>
 <div className="flex flex-col space-y-6">
-<a className="text-stone-900 font-bold border-l-4 border-stone-900 pl-4 flex items-center gap-3 transition-all duration-300" href="#">
+<a className="text-stone-900 font-bold border-l-4 border-stone-900 pl-4 flex items-center gap-3 transition-all duration-300" href="#forecast">
 <span className="material-symbols-outlined" data-icon="wb_sunny">wb_sunny</span>
 <span className="text-[10px] font-bold tracking-widest uppercase">FORECAST</span>
 </a>
-<a className="text-stone-700 pl-5 flex items-center gap-3 hover:text-stone-900 transition-all duration-300" href="#">
+<a className="text-stone-700 pl-5 flex items-center gap-3 hover:text-stone-900 transition-all duration-300" href="#radar">
 <span className="material-symbols-outlined" data-icon="layers">layers</span>
 <span className="text-[10px] font-bold tracking-widest uppercase">RADAR</span>
 </a>
-<a className="text-stone-700 pl-5 flex items-center gap-3 hover:text-stone-900 transition-all duration-300" href="#">
+<a className="text-stone-700 pl-5 flex items-center gap-3 hover:text-stone-900 transition-all duration-300" href="#radar">
 <span className="material-symbols-outlined" data-icon="air">air</span>
 <span className="text-[10px] font-bold tracking-widest uppercase">AIR QUALITY</span>
 </a>
-<a className="text-stone-700 pl-5 flex items-center gap-3 hover:text-stone-900 transition-all duration-300" href="#">
+<a className="text-stone-700 pl-5 flex items-center gap-3 hover:text-stone-900 transition-all duration-300" href="#historical">
 <span className="material-symbols-outlined" data-icon="history">history</span>
 <span className="text-[10px] font-bold tracking-widest uppercase">HISTORICAL</span>
 </a>
