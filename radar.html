@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;900&amp;family=Manrope:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-container": "#57514c",
+            "tertiary-dim": "#535352",
+            "tertiary-fixed-dim": "#e7e5e4",
+            "secondary-fixed-dim": "#dcd3cd",
+            "on-primary-container": "#55514e",
+            "surface-dim": "#d9dbcf",
+            "surface-container": "#efeee6",
+            "secondary-container": "#eae1da",
+            "on-tertiary-container": "#5c5c5b",
+            "on-tertiary": "#fbf8f7",
+            "on-secondary-fixed-variant": "#615a56",
+            "tertiary-container": "#f5f3f2",
+            "on-primary-fixed": "#433e3c",
+            "tertiary": "#5f5f5e",
+            "outline-variant": "#b1b3a9",
+            "surface-container-lowest": "#ffffff",
+            "secondary-dim": "#58524d",
+            "inverse-on-surface": "#9e9d99",
+            "error": "#9e422c",
+            "on-error": "#fff7f6",
+            "on-background": "#31332c",
+            "on-secondary-fixed": "#443e3a",
+            "surface-container-low": "#f5f4ed",
+            "inverse-surface": "#0e0e0c",
+            "outline": "#797c73",
+            "surface-variant": "#e2e3d9",
+            "on-surface-variant": "#5e6058",
+            "error-container": "#fe8b70",
+            "primary-container": "#e9e1dd",
+            "on-secondary": "#fff7f4",
+            "background": "#fbf9f4",
+            "on-tertiary-fixed": "#494a49",
+            "primary": "#625d5b",
+            "surface-container-highest": "#e2e3d9",
+            "secondary-fixed": "#eae1da",
+            "primary-fixed": "#e9e1dd",
+            "secondary": "#645e59",
+            "on-tertiary-fixed-variant": "#666665",
+            "surface-container-high": "#e8e9e0",
+            "tertiary-fixed": "#f5f3f2",
+            "surface": "#fbf9f4",
+            "on-surface": "#31332c",
+            "surface-tint": "#625d5b",
+            "on-error-container": "#742410",
+            "inverse-primary": "#ffffff",
+            "primary-fixed-dim": "#dad3cf",
+            "error-dim": "#5c1202",
+            "primary-dim": "#56514f",
+            "surface-bright": "#fbf9f4",
+            "on-primary-fixed-variant": "#5f5b58",
+            "on-primary": "#fef6f2"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      font-size: 1.25rem;
+    }
+    .radar-scan {
+      background: conic-gradient(from 0deg, transparent 0%, rgba(98, 93, 91, 0.1) 50%, transparent 100%);
+    }
+  </style>
+</head>
+<body class="bg-[#F7F5F0] text-on-surface font-body selection:bg-primary-container">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 flex flex-col h-full py-8 px-6 bg-[#F7F5F0] dark:bg-stone-950 h-screen w-64 border-r border-stone-200/20 dark:border-stone-800/20 z-50">
+<div class="mb-12">
+<h1 class="font-epilogue font-black text-2xl tracking-tighter text-stone-900 dark:text-stone-100">STRATUS</h1>
+<p class="font-epilogue tracking-wider text-[0.68rem] font-medium uppercase text-stone-500">METEOROLOGICAL DATA</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-500 dark:text-stone-400 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase hover:text-stone-900 dark:hover:text-stone-100" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_sync">cloud_sync</span>
+<span>FORECAST</span>
+</a>
+<!-- Active Navigation: RADAR -->
+<a class="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-900 dark:text-stone-100 font-bold border-r-2 border-stone-900 dark:border-stone-100 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="radar">radar</span>
+<span>RADAR</span>
+</a>
+<a class="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-500 dark:text-stone-400 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase hover:text-stone-900 dark:hover:text-stone-100" href="#">
+<span class="material-symbols-outlined" data-icon="air">air</span>
+<span>AIR QUALITY</span>
+</a>
+<a class="flex items-center space-x-3 p-3 transition-colors duration-200 group text-stone-500 dark:text-stone-400 font-epilogue tracking-wider text-[0.68rem] font-medium uppercase hover:text-stone-900 dark:hover:text-stone-100" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>HISTORICAL</span>
+</a>
+</nav>
+<div class="mt-auto pt-8">
+<button class="w-full py-3 text-[0.68rem] font-bold tracking-[0.2em] bg-stone-900 text-stone-100 rounded-sm active:opacity-80 transition-opacity">
+        UPGRADE PLAN
+      </button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-8 py-4 ml-64 bg-[#F7F5F0]/80 dark:bg-stone-950/80 backdrop-blur-md sticky top-0 z-40 border-b border-stone-200/20 dark:border-stone-800/20">
+<div class="flex items-center gap-4">
+<span class="font-epilogue font-black text-xl tracking-tight text-stone-900 dark:text-stone-100">RADAR / LIVE</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<input class="bg-surface-container-low border-none text-[0.68rem] tracking-widest px-4 py-2 w-64 focus:ring-1 focus:ring-stone-400 uppercase font-medium" placeholder="SEARCH COORDINATES" type="text"/>
+</div>
+<div class="flex items-center gap-4 text-stone-500">
+<button class="hover:opacity-70 transition-opacity"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="hover:opacity-70 transition-opacity"><span class="material-symbols-outlined" data-icon="settings">settings</span></button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-stone-200">
+<img alt="User profile" data-alt="professional portrait of a meteorologist in a minimal studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATYof54THxOn42ek41EhFHzse4xhncZsYM1N89HW6MeldvZ6EHXTEQGZl36g9u45kHwYxiq3dyGdtaTp2EdwOXNEoiZgDFLUZdsCFlewxPVWp-1SbUs8eOfirPAIZlpiynbavfD5TbmyKwnd34b3OijJmMrzWsxhw35iECDyn1os0ReuE3y_5gqGl7LCmPppuSn0wWU4X7woHS2ZUbetZZC11SoFv0uKLZ5kIqJ6zcPYtptJ6Lr-y8uYVTz7GmaJZbI6Ej9npscAo"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 p-8">
+<!-- Editorial Header Section -->
+<section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="font-label text-[0.68rem] tracking-[0.15em] font-medium uppercase text-stone-500 block mb-4">SYSTEM STATUS: ACTIVE</span>
+<h2 class="font-headline text-5xl font-black text-stone-900 leading-tight mb-6">Atmospheric Tension in the Pacific Northwest.</h2>
+<p class="font-body text-stone-600 leading-relaxed max-w-lg">
+          A significant thermal gradient is currently manifesting along the coastal shelf, precipitating a sequence of high-altitude vapor accumulation. We observe a rare dialogue between cold oceanic air and the inland warmth, resulting in the structured cloud formations visible on the current scan.
+        </p>
+</div>
+<div class="flex flex-col items-end text-right">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-700 mb-1">LOCAL TIME</span>
+<span class="font-headline text-3xl font-bold text-stone-900">14:28:04</span>
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-500 mt-1">UTC-08:00 PTD</span>
+</div>
+</section>
+<!-- Radar Map Component -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- Main Radar Card -->
+<div class="lg:col-span-3 bg-white border border-stone-200 rounded-lg overflow-hidden relative group shadow-sm">
+<div class="absolute inset-0 z-0 bg-stone-100">
+<img class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="high contrast satellite map of a coastal region with artistic weather radar overlays showing colorful precipitation patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3W3KzKhL-Qe1LjPXCX6d9vgdwtMMlzB8INI7UmF7CX2KhWEURGyc0QGQkRyqdbm8KWV-tp61BMYGhj2WV66-WLkJ2sCPQIpzZT9fBLZn4km32-VTYU7Wv5R4oPnKQXA8jhJeX185YaRPLKiebRsLA5vmVB-uEDX_LF6245NgNIrUPijnPipu_JDhy2jZhnIhZBY-pzMaqTGXX79AbEVtZs1j3kRVA7dfz-s-FxXkVMK8h6XU4f-fwgq0GE1VZjX9cwHmn8soRAKY"/>
+<!-- Stylized Radar Sweep Effect -->
+<div class="absolute inset-0 radar-scan animate-[spin_10s_linear_infinite]"></div>
+</div>
+<!-- Radar Controls Overlay -->
+<div class="absolute top-6 left-6 z-10 flex flex-col gap-3">
+<button class="bg-white/90 backdrop-blur p-3 rounded-sm shadow-sm hover:bg-white transition-colors border border-stone-200/50">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="bg-white/90 backdrop-blur p-3 rounded-sm shadow-sm hover:bg-white transition-colors border border-stone-200/50">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+</div>
+<div class="absolute top-6 right-6 z-10">
+<div class="bg-white/90 backdrop-blur px-4 py-2 rounded-sm shadow-sm border border-stone-200/50 flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-stone-900"></div>
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-700">LIVE FEED</span>
+</div>
+<div class="h-4 w-px bg-stone-200"></div>
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-500">RES: 0.25KM</span>
+</div>
+</div>
+<!-- Playback Controls Bar -->
+<div class="absolute bottom-6 inset-x-6 z-10 bg-white/90 backdrop-blur p-4 rounded-sm shadow-sm border border-stone-200/50 flex items-center gap-6">
+<button class="w-10 h-10 flex items-center justify-center bg-stone-900 text-white rounded-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-500">12:00 PM</span>
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-900 font-bold">CURRENT</span>
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-500">04:00 PM</span>
+</div>
+<div class="relative h-1 w-full bg-stone-200/50 rounded-full">
+<div class="absolute inset-y-0 left-0 w-3/4 bg-stone-900"></div>
+<div class="absolute top-1/2 left-3/4 -translate-y-1/2 w-3 h-3 bg-white border-2 border-stone-900 rounded-full"></div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-2 bg-stone-100 hover:bg-stone-200 rounded-sm font-label text-[10px] tracking-widest uppercase text-stone-700">1X</button>
+<button class="px-3 py-2 bg-stone-100 hover:bg-stone-200 rounded-sm font-label text-[10px] tracking-widest uppercase text-stone-700">LOOP</button>
+</div>
+</div>
+</div>
+<!-- Radar Layers & Meta Column -->
+<div class="flex flex-col gap-6">
+<!-- Layer Selection -->
+<div class="bg-white border border-stone-200 rounded-lg p-6 shadow-sm">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-400 block mb-6">MAP LAYERS</span>
+<div class="space-y-4">
+<button class="w-full flex items-center justify-between group">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-900 font-bold">PRECIPITATION</span>
+<div class="w-4 h-4 border border-stone-900 bg-stone-900 flex items-center justify-center rounded-sm">
+<span class="material-symbols-outlined text-[12px] text-white" data-icon="check">check</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between group">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-500 group-hover:text-stone-900 transition-colors">WIND VELOCITY</span>
+<div class="w-4 h-4 border border-stone-200 rounded-sm group-hover:border-stone-400 transition-colors"></div>
+</button>
+<button class="w-full flex items-center justify-between group">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-500 group-hover:text-stone-900 transition-colors">TEMPERATURE</span>
+<div class="w-4 h-4 border border-stone-200 rounded-sm group-hover:border-stone-400 transition-colors"></div>
+</button>
+<button class="w-full flex items-center justify-between group">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-500 group-hover:text-stone-900 transition-colors">ISOBARIC LINES</span>
+<div class="w-4 h-4 border border-stone-200 rounded-sm group-hover:border-stone-400 transition-colors"></div>
+</button>
+</div>
+</div>
+<!-- Precipitation Legend -->
+<div class="bg-white border border-stone-200 rounded-lg p-6 shadow-sm">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-400 block mb-6">INTENSITY SCALE</span>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-1 h-8 bg-stone-900"></div>
+<div>
+<p class="font-label text-[10px] tracking-widest uppercase text-stone-900 font-bold">SEVERE</p>
+<p class="font-label text-[10px] text-stone-400">&gt; 50 DBZ</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-1 h-8 bg-stone-600"></div>
+<div>
+<p class="font-label text-[10px] tracking-widest uppercase text-stone-700">MODERATE</p>
+<p class="font-label text-[10px] text-stone-400">30 - 50 DBZ</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-1 h-8 bg-stone-300"></div>
+<div>
+<p class="font-label text-[10px] tracking-widest uppercase text-stone-500">LIGHT</p>
+<p class="font-label text-[10px] text-stone-400">&lt; 30 DBZ</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Points Bento -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-500 block mb-2">HUMIDITY</span>
+<span class="font-headline text-xl font-bold text-stone-900">74%</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<span class="font-label text-[10px] tracking-widest uppercase text-stone-500 block mb-2">VISIBILITY</span>
+<span class="font-headline text-xl font-bold text-stone-900">12KM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Weather Pattern Commentary Card -->
+<section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-1 p-8 bg-stone-900 text-stone-100 rounded-lg flex flex-col justify-between h-80">
+<div>
+<span class="font-label text-[10px] tracking-[0.2em] uppercase opacity-60 mb-6 block">EDITORIAL FOCUS</span>
+<h3 class="font-headline text-2xl font-bold leading-snug">The Architecture of a Storm.</h3>
+</div>
+<p class="font-body text-stone-400 text-sm leading-relaxed">
+          How structural stability in the upper atmosphere dictates the aesthetic and physical form of modern storm fronts.
+        </p>
+<a class="font-label text-[10px] tracking-[0.2em] uppercase font-bold flex items-center gap-2 hover:gap-4 transition-all" href="#">
+          READ ARTICLE <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="md:col-span-2 relative rounded-lg overflow-hidden h-80">
+<img class="w-full h-full object-cover" data-alt="dramatic wide-angle shot of a supercell cloud formation over a minimalist landscape at twilight with dark moody colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDd1u7NS_M9ICs2FnCdKcWeypDQXfb_abA3QdDXNVDB7Q4mfmLz_YGwS_xf_qg4f4E1PZB-usHE-VPDl7YhjqzZh7uQk12204Os01zXs_I7V4xMfC0bEimwoYCh_D4wxQFlSsVweNBhU0hMH2QTG8fwDaBq-H-cA53eMZThPqvDKM25Zcyqq5bKdDFwD_fbVz3y2a_c7vQ6l-MVu2ajCNMrp63S9xmxRGPi9s4z5xzYHkQOQCDTDMu7qcstKKidtLtkF_GtyhJDxA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent flex flex-col justify-end p-8">
+<span class="font-label text-[10px] tracking-widest uppercase text-white/60 mb-2">OBSERVATION LOG</span>
+<p class="font-body text-white text-lg max-w-lg">
+            "The clouds today possess a rigid, almost monolithic quality. It is weather as sculpture."
+          </p>
+</div>
+</div>
+</section>
+</main>
+<footer class="ml-64 p-8 border-t border-stone-200 mt-12 flex justify-between items-center opacity-40">
+<span class="font-label text-[10px] tracking-widest uppercase">STRATUS METEOROLOGICAL NETWORK © 2024</span>
+<div class="flex gap-6">
+<span class="font-label text-[10px] tracking-widest uppercase">LAT: 45.523062</span>
+<span class="font-label text-[10px] tracking-widest uppercase">LONG: -122.676482</span>
+</div>
+</footer>
+</body></html>
