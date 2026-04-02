@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>METEO | Editorial Weather Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#1c1917", // stone-900 equivalent
+              "inverse-surface": "#0e0e0c",
+              "error": "#9e422c",
+              "surface-tint": "#625d5b",
+              "on-secondary-fixed": "#443e3a",
+              "surface-container-low": "#f5f4ed",
+              "surface-dim": "#d9dbcf",
+              "surface-variant": "#e2e3d9",
+              "tertiary": "#44403c", // darker stone
+              "on-primary-container": "#44403c",
+              "secondary-fixed-dim": "#dcd3cd",
+              "error-dim": "#5c1202",
+              "primary-dim": "#56514f",
+              "tertiary-container": "#f5f3f2",
+              "on-tertiary-container": "#44403c",
+              "tertiary-dim": "#535352",
+              "surface-container-highest": "#e2e3d9",
+              "background": "#fbf9f4",
+              "secondary-dim": "#58524d",
+              "surface-bright": "#fbf9f4",
+              "on-error-container": "#742410",
+              "surface-container": "#efeee6",
+              "on-secondary-container": "#44403c",
+              "on-background": "#1c1917",
+              "inverse-on-surface": "#9e9d99",
+              "secondary": "#44403c",
+              "primary-fixed-dim": "#dad3cf",
+              "outline-variant": "#b1b3a9",
+              "on-surface-variant": "#44403c",
+              "primary": "#1c1917",
+              "error-container": "#fe8b70",
+              "on-primary-fixed-variant": "#44403c",
+              "inverse-primary": "#ffffff",
+              "surface": "#fbf9f4",
+              "secondary-fixed": "#eae1da",
+              "on-secondary-fixed-variant": "#44403c",
+              "on-secondary": "#fff7f4",
+              "on-error": "#fff7f6",
+              "outline": "#797c73",
+              "on-tertiary": "#fbf8f7",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#e7e5e4",
+              "on-primary": "#fef6f2",
+              "primary-fixed": "#e9e1dd",
+              "tertiary-fixed": "#f5f3f2",
+              "primary-container": "#e9e1dd",
+              "on-tertiary-fixed-variant": "#44403c",
+              "on-primary-fixed": "#1c1917",
+              "on-tertiary-fixed": "#1c1917",
+              "secondary-container": "#eae1da",
+              "surface-container-high": "#e8e9e0"
+            },
+            fontFamily: {
+              "headline": ["Epilogue", "sans-serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .text-editorial-lg { font-family: 'Epilogue'; font-weight: 900; letter-spacing: -0.04em; }
+    </style>
+</head>
+<body class="bg-background text-stone-900 selection:bg-stone-200">
+<!-- Sidebar Navigation -->
+<nav class="hidden lg:flex flex-col w-64 fixed left-0 top-0 h-full p-8 bg-[#fbf9f4] border-r border-stone-900/10 z-50">
+<div class="mb-12">
+<span class="text-xl font-black tracking-tighter text-stone-900">METEO</span>
+<p class="text-[10px] font-bold tracking-widest uppercase text-stone-700 mt-1">EDITORIAL EDITION</p>
+</div>
+<div class="flex flex-col space-y-6">
+<a class="text-stone-900 font-bold border-l-4 border-stone-900 pl-4 flex items-center gap-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="wb_sunny">wb_sunny</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">FORECAST</span>
+</a>
+<a class="text-stone-700 pl-5 flex items-center gap-3 hover:text-stone-900 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">RADAR</span>
+</a>
+<a class="text-stone-700 pl-5 flex items-center gap-3 hover:text-stone-900 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="air">air</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">AIR QUALITY</span>
+</a>
+<a class="text-stone-700 pl-5 flex items-center gap-3 hover:text-stone-900 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">HISTORICAL</span>
+</a>
+</div>
+<div class="mt-auto">
+<div class="aspect-square bg-surface-container mb-4 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="minimalist topographical map of coastal region with muted beige and gray tones subtle terrain lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuHg1LGz1iazCI1TeYzxRZ_7OM-4ijwCqsVmEy1UzCXF1mEkLAFb1ThLTle3Y_0BKvun43i3sVRvSZw6_tdankxsZdSQul-sDuFIdjVIPRDl-M6P-hWIDron2EmdD-pxB8Y8CINSMg2jsA7A-9w6uTGgu8Ad9qoek6lmTjkq2uFKk3NbohMUVOD3hJ6K7-h_p0eQTknUBfQhRIQaubSr2thmcw9B4a5Jie7gYBankxnqpC2_d-D565jIC9n0jJAUro9_sD2e9YVLA"/>
+</div>
+<p class="text-[10px] font-bold tracking-widest uppercase text-stone-700 leading-relaxed">
+                PREMIUM ANALYSIS<br/>AVAILABLE UPON REQUEST
+            </p>
+</div>
+</nav>
+<!-- Main Content Shell -->
+<main class="lg:pl-64 min-h-screen">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto border-b border-stone-900/20 bg-[#fbf9f4]">
+<div class="flex-1 flex items-center gap-12">
+<div class="relative w-full max-w-md">
+<input class="w-full bg-transparent border-b border-stone-900/40 py-2 focus:border-stone-900 focus:ring-0 rounded-none placeholder:text-stone-700/50 text-[10px] tracking-widest font-bold text-stone-900" placeholder="SEARCH LOCATION..." type="text"/>
+</div>
+</div>
+<button class="flex items-center gap-2 border-2 border-stone-900 px-4 py-2 hover:bg-stone-900 hover:text-white transition-all duration-200">
+<span class="material-symbols-outlined text-sm" data-icon="my_location">my_location</span>
+<span class="text-[10px] font-bold tracking-[0.15em] uppercase">CURRENT LOCATION</span>
+</button>
+</header>
+<!-- Canvas -->
+<div class="max-w-6xl mx-auto p-8 lg:p-12">
+<!-- Hero Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-24">
+<!-- Time & Location -->
+<div class="lg:col-span-5 border-l-2 border-stone-900 pl-8">
+<p class="text-[10px] font-bold tracking-[0.2em] uppercase text-stone-700 mb-2">MUMBAI, INDIA</p>
+<h1 class="text-7xl lg:text-8xl text-editorial-lg text-stone-900 leading-none">23:35</h1>
+<p class="text-[10px] font-bold tracking-[0.2em] uppercase text-stone-700 mt-4">LOCAL TIME — FRIDAY, 27 OCT</p>
+</div>
+<!-- Current Weather -->
+<div class="lg:col-span-7 flex flex-col md:flex-row md:items-end md:justify-between gap-12">
+<div class="flex items-end gap-6">
+<span class="material-symbols-outlined text-7xl lg:text-8xl text-stone-900 font-extralight" data-icon="cloud">cloud</span>
+<div class="flex flex-col">
+<h2 class="text-7xl lg:text-8xl text-editorial-lg text-stone-900 leading-none">28°C</h2>
+<p class="text-[10px] font-bold tracking-[0.2em] uppercase text-stone-700">FEELS LIKE 31°C / OVERCAST</p>
+</div>
+</div>
+<!-- Metrics Table -->
+<div class="flex flex-col text-right">
+<table class="w-full text-right border-separate border-spacing-y-2">
+<tbody>
+<tr>
+<td class="text-[10px] font-bold tracking-widest uppercase text-stone-700 pr-8">HUMIDITY</td>
+<td class="text-body-md font-black text-stone-900">78%</td>
+</tr>
+<tr>
+<td class="text-[10px] font-bold tracking-widest uppercase text-stone-700 pr-8">WIND</td>
+<td class="text-body-md font-black text-stone-900">12 KM/H</td>
+</tr>
+<tr>
+<td class="text-[10px] font-bold tracking-widest uppercase text-stone-700 pr-8">UV INDEX</td>
+<td class="text-body-md font-black text-stone-900">0 (LOW)</td>
+</tr>
+<tr>
+<td class="text-[10px] font-bold tracking-widest uppercase text-stone-700 pr-8">PRESSURE</td>
+<td class="text-body-md font-black text-stone-900">1012 MB</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Bento Grid Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<!-- 5-Day Forecast -->
+<div class="md:col-span-1 bg-surface-container-lowest border-2 border-stone-900 p-8">
+<h3 class="text-[10px] font-black tracking-[0.3em] uppercase text-stone-900 mb-10 pb-4 border-b-2 border-stone-900">5-DAY OUTLOOK</h3>
+<div class="space-y-0">
+<div class="flex justify-between items-center py-5 border-b border-stone-200">
+<span class="text-[11px] font-black tracking-widest uppercase text-stone-900">SAT</span>
+<span class="material-symbols-outlined text-stone-900" data-icon="wb_sunny">wb_sunny</span>
+<span class="text-sm font-black text-stone-900">31° <span class="text-stone-700/50 font-bold ml-2">24°</span></span>
+</div>
+<div class="flex justify-between items-center py-5 border-b border-stone-200">
+<span class="text-[11px] font-black tracking-widest uppercase text-stone-900">SUN</span>
+<span class="material-symbols-outlined text-stone-900" data-icon="partly_cloudy_day">partly_cloudy_day</span>
+<span class="text-sm font-black text-stone-900">29° <span class="text-stone-700/50 font-bold ml-2">23°</span></span>
+</div>
+<div class="flex justify-between items-center py-5 border-b border-stone-200">
+<span class="text-[11px] font-black tracking-widest uppercase text-stone-900">MON</span>
+<span class="material-symbols-outlined text-stone-900" data-icon="rainy">rainy</span>
+<span class="text-sm font-black text-stone-900">27° <span class="text-stone-700/50 font-bold ml-2">22°</span></span>
+</div>
+<div class="flex justify-between items-center py-5 border-b border-stone-200">
+<span class="text-[11px] font-black tracking-widest uppercase text-stone-900">TUE</span>
+<span class="material-symbols-outlined text-stone-900" data-icon="cloud">cloud</span>
+<span class="text-sm font-black text-stone-900">28° <span class="text-stone-700/50 font-bold ml-2">23°</span></span>
+</div>
+<div class="flex justify-between items-center py-5">
+<span class="text-[11px] font-black tracking-widest uppercase text-stone-900">WED</span>
+<span class="material-symbols-outlined text-stone-900" data-icon="wb_sunny">wb_sunny</span>
+<span class="text-sm font-black text-stone-900">32° <span class="text-stone-700/50 font-bold ml-2">25°</span></span>
+</div>
+</div>
+</div>
+<!-- Hourly Forecast -->
+<div class="md:col-span-2 bg-surface-container-lowest border-2 border-stone-900 p-8">
+<div class="flex justify-between items-center mb-10 pb-4 border-b-2 border-stone-900">
+<h3 class="text-[10px] font-black tracking-[0.3em] uppercase text-stone-900">HOURLY DISTRIBUTION</h3>
+<span class="text-[10px] font-black tracking-widest text-stone-900 uppercase">UTC+5:30</span>
+</div>
+<div class="grid grid-cols-6 gap-2">
+<div class="flex flex-col items-center py-4 border-r border-stone-200 last:border-0">
+<p class="text-[10px] font-black text-stone-700 mb-6">00:00</p>
+<span class="material-symbols-outlined text-stone-900 mb-6" data-icon="nights_stay">nights_stay</span>
+<p class="text-lg font-black text-stone-900">26°</p>
+</div>
+<div class="flex flex-col items-center py-4 border-r border-stone-200 last:border-0">
+<p class="text-[10px] font-black text-stone-700 mb-6">04:00</p>
+<span class="material-symbols-outlined text-stone-900 mb-6" data-icon="bedtime">bedtime</span>
+<p class="text-lg font-black text-stone-900">25°</p>
+</div>
+<div class="flex flex-col items-center py-4 border-r border-stone-200 last:border-0">
+<p class="text-[10px] font-black text-stone-700 mb-6">08:00</p>
+<span class="material-symbols-outlined text-stone-900 mb-6" data-icon="wb_twilight">wb_twilight</span>
+<p class="text-lg font-black text-stone-900">27°</p>
+</div>
+<div class="flex flex-col items-center py-4 border-r border-stone-200 last:border-0">
+<p class="text-[10px] font-black text-stone-700 mb-6">12:00</p>
+<span class="material-symbols-outlined text-stone-900 mb-6" data-icon="wb_sunny">wb_sunny</span>
+<p class="text-lg font-black text-stone-900">31°</p>
+</div>
+<div class="flex flex-col items-center py-4 border-r border-stone-200 last:border-0">
+<p class="text-[10px] font-black text-stone-700 mb-6">16:00</p>
+<span class="material-symbols-outlined text-stone-900 mb-6" data-icon="wb_sunny">wb_sunny</span>
+<p class="text-lg font-black text-stone-900">29°</p>
+</div>
+<div class="flex flex-col items-center py-4">
+<p class="text-[10px] font-black text-stone-700 mb-6">20:00</p>
+<span class="material-symbols-outlined text-stone-900 mb-6" data-icon="partly_cloudy_night">partly_cloudy_night</span>
+<p class="text-lg font-black text-stone-900">27°</p>
+</div>
+</div>
+<div class="mt-12">
+<div class="h-[120px] w-full flex items-end gap-1 px-4">
+<div class="flex-1 bg-stone-900/10 h-[40%]" title="Humidity"></div>
+<div class="flex-1 bg-stone-900/10 h-[35%]" title="Humidity"></div>
+<div class="flex-1 bg-stone-900/20 h-[50%]" title="Humidity"></div>
+<div class="flex-1 bg-stone-900/40 h-[70%]" title="Humidity"></div>
+<div class="flex-1 bg-stone-900/20 h-[60%]" title="Humidity"></div>
+<div class="flex-1 bg-stone-900/10 h-[45%]" title="Humidity"></div>
+</div>
+<p class="text-[9px] font-black tracking-[0.2em] uppercase text-stone-900 mt-4 text-center">ATMOSPHERIC MOISTURE DISTRIBUTION</p>
+</div>
+</div>
+</div>
+<!-- Detailed Editorial Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+<div class="space-y-8">
+<h4 class="text-[10px] font-black tracking-[0.4em] uppercase text-stone-900 border-b-2 border-stone-900 pb-4">RADAR SCAN</h4>
+<div class="aspect-video bg-surface-container relative overflow-hidden rounded-lg border-2 border-stone-900">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="abstract satellite weather radar imagery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMERSlUFLecJURGHKcfe8MQhDe-1tyflyomUoHepRvRRCG2Ka0q9UkwKEhElx6mV6T6j3_i6hE46_n4-EENMsrZOcGCYy9QGUdlaJmDAlkiIDymWcM8d8A9BigAilOa9I9nlLPKHc0O_8V1atvCrKy_iUZjQMWtfBbQzAqmNs7xocZkHL_-pkTWP4ThfcaU2pvWHH6-oswbp1wHCnlWJ4ZInUKF0D4KeuCJ1ZSF9Ggv3vZmRywe6g6GGQtCbAJ7iRUgGC0X3UMGzY"/>
+<div class="absolute inset-0 bg-stone-900/10"></div>
+<div class="absolute top-4 left-4 bg-stone-900 px-3 py-1 border border-stone-900 shadow-sm">
+<span class="text-[9px] font-black tracking-widest text-white uppercase">LIVE SAT FEED</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-headline-md text-stone-900 mb-6 leading-tight font-black">Increased cloud cover expected across the coastal corridor by morning.</p>
+<p class="text-body-md text-stone-700 font-bold leading-relaxed mb-8">Meteorological observations suggest a stable high-pressure system currently sitting over the Arabian Sea, ensuring relatively warm nights despite the increasing humidity levels.</p>
+<div class="grid grid-cols-2 gap-8 border-t-2 border-stone-900 pt-8">
+<div>
+<p class="text-[9px] font-black tracking-widest uppercase text-stone-700 mb-2">SUNRISE</p>
+<p class="text-xl font-black text-stone-900">06:42 AM</p>
+</div>
+<div>
+<p class="text-[9px] font-black tracking-widest uppercase text-stone-700 mb-2">SUNSET</p>
+<p class="text-xl font-black text-stone-900">06:04 PM</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="max-w-6xl mx-auto px-8 pb-12 border-t-2 border-stone-900/10 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<div class="flex flex-col">
+<span class="text-sm font-black tracking-tighter text-stone-900">METEO DASHBOARD</span>
+<p class="text-[10px] font-bold tracking-widest uppercase text-stone-700">VERSION 4.2.1 • DATA BY OPENWEATHER</p>
+</div>
+<div class="flex gap-8">
+<a class="text-[10px] font-black tracking-widest uppercase text-stone-900 hover:underline transition-all" href="#">ARCHIVE</a>
+<a class="text-[10px] font-black tracking-widest uppercase text-stone-900 hover:underline transition-all" href="#">API ACCESS</a>
+<a class="text-[10px] font-black tracking-widest uppercase text-stone-900 hover:underline transition-all" href="#">PRIVACY POLICY</a>
+</div>
+</footer>
+</main>
+<!-- Mobile Bottom Navigation -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t-2 border-stone-900 px-8 py-4 flex justify-between items-center z-[100] shadow-2xl">
+<button class="text-stone-900 flex flex-col items-center">
+<span class="material-symbols-outlined text-xl font-black" data-icon="wb_sunny">wb_sunny</span>
+<span class="text-[8px] font-black mt-1 tracking-widest">NOW</span>
+</button>
+<button class="text-stone-700 flex flex-col items-center">
+<span class="material-symbols-outlined text-xl" data-icon="layers">layers</span>
+<span class="text-[8px] font-bold mt-1 tracking-widest">MAP</span>
+</button>
+<button class="text-stone-700 flex flex-col items-center">
+<span class="material-symbols-outlined text-xl" data-icon="air">air</span>
+<span class="text-[8px] font-bold mt-1 tracking-widest">AIR</span>
+</button>
+<button class="text-stone-700 flex flex-col items-center">
+<span class="material-symbols-outlined text-xl" data-icon="history">history</span>
+<span class="text-[8px] font-bold mt-1 tracking-widest">ARCHIVE</span>
+</button>
+</div>
+</body></html>
