@@ -11,8 +11,11 @@ html {
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Courier New', Courier, monospace, 'Arial Black', sans-serif;
   min-height: 100vh;
+  margin: 0;
+  background-color: #fdfae7;
+  color: #000;
 }
 
 #root {
