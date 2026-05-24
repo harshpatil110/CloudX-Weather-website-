@@ -1,44 +1,44 @@
-// Weather background gradients mapping
+// Weather background mapping for Neo Brutalism
 export const weatherBackgrounds = {
   Clear: {
-    day: 'linear-gradient(135deg, #1E90FF 0%, #87CEEB 100%)',
-    night: 'linear-gradient(135deg, #0c1445 0%, #1a2a6c 100%)'
+    day: '#ffd803',
+    night: '#2b2c34'
   },
   Clouds: {
-    day: 'linear-gradient(135deg, #4a5568 0%, #2d3748 100%)',
-    night: 'linear-gradient(135deg, #1a202c 0%, #2d3748 100%)'
+    day: '#fdfae7',
+    night: '#6246ea'
   },
   Rain: {
-    day: 'linear-gradient(135deg, #2c3e50 0%, #34495e 100%)',
-    night: 'linear-gradient(135deg, #0f2027 0%, #203a43 100%)'
+    day: '#4a90e2',
+    night: '#3da9fc'
   },
   Drizzle: {
-    day: 'linear-gradient(135deg, #3a4f63 0%, #4a6278 100%)',
-    night: 'linear-gradient(135deg, #1a2634 0%, #2a3644 100%)'
+    day: '#bae8e8',
+    night: '#4a90e2'
   },
   Thunderstorm: {
-    day: 'linear-gradient(135deg, #1c1c2e 0%, #2d2d44 100%)',
-    night: 'linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%)'
+    day: '#ff6b6b',
+    night: '#e45858'
   },
   Snow: {
-    day: 'linear-gradient(135deg, #e0e7ef 0%, #b8c6db 100%)',
-    night: 'linear-gradient(135deg, #2c3e50 0%, #3a4f63 100%)'
+    day: '#e3f6f5',
+    night: '#d8eef0'
   },
   Haze: {
-    day: 'linear-gradient(135deg, #a8b8c8 0%, #c8d8e8 100%)',
-    night: 'linear-gradient(135deg, #2a3a4a 0%, #3a4a5a 100%)'
+    day: '#fffffe',
+    night: '#90b4ce'
   },
   Fog: {
-    day: 'linear-gradient(135deg, #b0c4de 0%, #d0e4fe 100%)',
-    night: 'linear-gradient(135deg, #2a3a4a 0%, #3a4a5a 100%)'
+    day: '#e3f6f5',
+    night: '#90b4ce'
   },
   Smoke: {
-    day: 'linear-gradient(135deg, #8a9aa8 0%, #aabac8 100%)',
-    night: 'linear-gradient(135deg, #1a2a3a 0%, #2a3a4a 100%)'
+    day: '#fdfae7',
+    night: '#4a5568'
   },
   Mist: {
-    day: 'linear-gradient(135deg, #b8c8d8 0%, #d8e8f8 100%)',
-    night: 'linear-gradient(135deg, #2a3a4a 0%, #3a4a5a 100%)'
+    day: '#bae8e8',
+    night: '#0a0a14'
   }
 };
 
