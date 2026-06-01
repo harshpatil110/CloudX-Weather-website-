@@ -1,8 +1,4 @@
-# Weather App
 
-A modern, responsive weather application built with React that provides real-time weather information for any city worldwide. Features a sleek black-white-blue themed interface with smooth animations and an intuitive user experience.
-
-## Features
 
 - **City Search**: Search for current weather conditions by city name
 - **Real-time Data**: Get up-to-date weather information from OpenWeatherMap API
